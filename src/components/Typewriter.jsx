@@ -7,6 +7,7 @@ const TypeWriter = ({ texts }) => (
     options={{
       strings: texts,
       autoStart: true,
+      cursor: '!',
       loop: true,
       deleteSpeed: 50,
       wrapperClassName: 'sars_tags'
