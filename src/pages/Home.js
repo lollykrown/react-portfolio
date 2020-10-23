@@ -27,9 +27,9 @@ function Home() {
 
 
     return (
-        <HomeWrapper className="">
+        <HomeWrapper className="top">
             <Navbar />
-            <section className="top">
+            {/* <section className="top">
                 <div className="caption" >
                     <div className="box">
                         <h2 className=""><TypeWriter className="" texts={words} /> </h2>
@@ -38,36 +38,36 @@ function Home() {
                 </div>
                 <img className="arrow" src={down} alt="down-arrow" onClick={() => window.scrollTo(0, next.current.offsetTop)}/>
 
-            </section>
+            </section> */}
 
 
-            {/* <main>
-        <aside>
-          <ul>
-            <li class="icon"><a href="https://github.com/lollykrown"><i class="fa fa-github" style="font-size:1.25em;color:#ffffff;"></i></a></li>
-            <li class="icon"><a href="https://twitter.com/lollykrown"><i class="fa fa-twitter " style="font-size:1.25em;color:#ffffff;"></i></a></li>
-            <li class="icon"><a href="https://facebook.com/lollykrown"><i class="fa fa-facebook " style="font-size:1.25em;color:#ffffff;"></i></a></li>
-            <li class="icon"><a href="https://whatsapp.com/lollykrown"><i class="fa fa-whatsapp " style="font-size:1.25em;color:#ffffff;"></i></a></li>
-            <li class="icon"><a href="https://linkedin.com/lollykrown"><i class="fa fa-linkedin " style="font-size:1.25em;color:#ffffff;"></i></a></li>
-          </ul>
-        </aside>
-        <section class="name">
-          <div >
-            <h1>Ol&#250;wak&#225;y&#242;d&#233;</h1>
-          </div>
-        </section>
-        <section class="bottom-section">
-          <div class="bottom">
-            <div class="left">
-              <h3>Ol&#250;wak&#225;y&#242;d&#233; Agboola</h3>
-              <p class="title">Fullstack Developer/Mobile Developer</p>
-            </div>
-            <div class=right>
-              <p>Check me out &nbsp; <a href="#"><img class="arrow" src="right.svg" alt=""></a></p>              
-            </div>
-          </div>
-        </section>
-      </main> */}
+            <main className="">
+                <aside>
+                    <ul>
+                        <li className="icon"><a href="https://github.com/lollykrown"><i className="fa fa-github" style={{ fontSize: "1.25em", color: "#ffffff" }}></i></a></li>
+                        <li className="icon"><a href="https://twitter.com/lollykrown"><i className="fa fa-twitter " style={{ fontSize: "1.25em", color: "#ffffff" }}></i></a></li>
+                        <li className="icon"><a href="https://facebook.com/lollykrown"><i className="fa fa-facebook " style={{ fontSize: "1.25em", color: "#ffffff" }}></i></a></li>
+                        <li className="icon"><a href="https://whatsapp.com/lollykrown"><i className="fa fa-whatsapp " style={{ fontSize: "1.25em", color: "#ffffff" }}></i></a></li>
+                        <li className="icon"><a href="https://linkedin.com/lollykrown"><i className="fa fa-linkedin " style={{ fontSize: "1.25em", color: "#ffffff" }}></i></a></li>
+                    </ul>
+                </aside>
+                <section className="name">
+                    <div >
+                        <h1>Ol&#250;wak&#225;y&#242;d&#233;</h1>
+                    </div>
+                </section>
+                <section className="bottom-section">
+                    <div className="bottom">
+                        <div className="left">
+                            <h3>Ol&#250;wak&#225;y&#242;d&#233; Agboola</h3>
+                            <p className="title">Fullstack Developer/Mobile Developer</p>
+                        </div>
+                        <div className="right">
+                            <p>Check me out &nbsp; <a href="#"><img className="arrow" src="right.svg" alt="" /></a></p>
+                        </div>
+                    </div>
+                </section>
+            </main>
 
 
 
@@ -81,7 +81,6 @@ export default Home
 
 const HomeWrapper = styled.div`
 // background-color:#000000;
-
 .top{
     height: 92vh;
     width: 100%;

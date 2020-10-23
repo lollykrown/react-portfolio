@@ -4,11 +4,11 @@ import logo from '../../src/logo.svg'
 
 const Navbar = () => (
   <NavWrapper>
-      <nav class="nav-container">
-          <a class="brand" href="#">
+      <nav className="nav-container">
+          <a className="brand" href="#">
             <img src={logo} alt="logo" loading="lazy" />
           </a>
-          <ul class="menu">
+          <ul className="menu">
             <li>
               <a href="#home">Home</a>
             </li>
