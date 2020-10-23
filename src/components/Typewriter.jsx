@@ -8,7 +8,7 @@ const TypeWriter = ({ texts }) => (
       strings: texts,
       autoStart: true,
       cursor: '!',
-      loop: true,
+      loop: false,
       deleteSpeed: 50,
     }}
   />

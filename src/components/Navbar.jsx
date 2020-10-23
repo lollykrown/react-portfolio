@@ -5,7 +5,7 @@ import logo from '../../src/logo.svg'
 const Navbar = () => (
   <NavWrapper>
       <nav className="nav-container">
-          <a className="brand" href="#">
+          <a className="brand" href="https://oluwakayode.netlify.app">
             <img src={logo} alt="logo" loading="lazy" />
           </a>
           <ul className="menu">
@@ -31,31 +31,28 @@ const Navbar = () => (
 export default Navbar;
 
 const NavWrapper = styled.div`
+.menu li {
+  display: inline;
+  margin-right: 3em;
+  color: #ffffff;
+}
+.brand img {
+  width: 50px;
+  height: 40px;
+}
+.nav-container {
+  width: 100%;
+  padding: 0.5em 1em 0 1em;
+}
 background-color:#000000;
 box-shadow: inset 0 0 1000px 1000px rgba(0, 0, 0, 0.747);
-margin:0;
-
-.menu {
-  display: -webkit-box; 
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex; 
-  display: flex;
-}
-
-ul {
-  list-style-type: none;
-  margin-block-start: 0;
-  margin-block-end: 0;
-  padding: 1rem 3rem;
-}
 
 .nav-item{
   color:#ffffff;
   margin-right: 1rem;
 }
 
-.logo{
-  margin-right:auto;
-}
+// .logo{
+//   margin-right:auto;
+// }
 `
