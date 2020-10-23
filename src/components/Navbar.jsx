@@ -4,12 +4,25 @@ import logo from '../../src/logo.svg'
 
 const Navbar = () => (
   <NavWrapper>
-      <ul className="menu">
-          <li className="nav-item logo"><img src={logo} alt="logo"/></li>
-          <li className="nav-item">Logo</li>
-          <li className="nav-item">Logo</li>
-          <li className="nav-item">Logo</li>
-      </ul>
+      <nav class="nav-container">
+          <a class="brand" href="#">
+            <img src={logo} alt="logo" loading="lazy" />
+          </a>
+          <ul class="menu">
+            <li>
+              <a href="#home">Home</a>
+            </li>
+            <li>
+              <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#portfolio">Portfolio</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+        </nav>
 
     </NavWrapper>
 

@@ -15,11 +15,6 @@ function Home() {
         "Open source Contributor"
     ]
 
-    // let scrollHeight = Math.max(
-    //     document.body.scrollHeight, document.documentElement.scrollHeight,
-    //     document.body.offsetHeight, document.documentElement.offsetHeight,
-    //     document.body.clientHeight, document.documentElement.clientHeight
-    //   );
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' })
 
@@ -46,29 +41,33 @@ function Home() {
             </section>
 
 
-            <section ref={next} className="next">
-                <div className="caption" >
-                    <div className="box">
-                        <h2 className=""><TypeWriter className="" texts={words} /> </h2>
-                        <br />
-                    </div>
-                </div>
-
-                <button >arrow down</button>
-            </section>
-            <section ref={third} className="third">
-                <div className="next">
-                    <div className="caption" >
-                        <div className="box">
-                            <h2 className=""><TypeWriter className="" texts={words} /> </h2>
-                            <br />
-                        </div>
-                    </div>
-                    <img src={down} alt="jhh"/>
-
-                    <button >arrow down</button>
-                </div>
-            </section>
+            {/* <main>
+        <aside>
+          <ul>
+            <li class="icon"><a href="https://github.com/lollykrown"><i class="fa fa-github" style="font-size:1.25em;color:#ffffff;"></i></a></li>
+            <li class="icon"><a href="https://twitter.com/lollykrown"><i class="fa fa-twitter " style="font-size:1.25em;color:#ffffff;"></i></a></li>
+            <li class="icon"><a href="https://facebook.com/lollykrown"><i class="fa fa-facebook " style="font-size:1.25em;color:#ffffff;"></i></a></li>
+            <li class="icon"><a href="https://whatsapp.com/lollykrown"><i class="fa fa-whatsapp " style="font-size:1.25em;color:#ffffff;"></i></a></li>
+            <li class="icon"><a href="https://linkedin.com/lollykrown"><i class="fa fa-linkedin " style="font-size:1.25em;color:#ffffff;"></i></a></li>
+          </ul>
+        </aside>
+        <section class="name">
+          <div >
+            <h1>Ol&#250;wak&#225;y&#242;d&#233;</h1>
+          </div>
+        </section>
+        <section class="bottom-section">
+          <div class="bottom">
+            <div class="left">
+              <h3>Ol&#250;wak&#225;y&#242;d&#233; Agboola</h3>
+              <p class="title">Fullstack Developer/Mobile Developer</p>
+            </div>
+            <div class=right>
+              <p>Check me out &nbsp; <a href="#"><img class="arrow" src="right.svg" alt=""></a></p>              
+            </div>
+          </div>
+        </section>
+      </main> */}
 
 
 
