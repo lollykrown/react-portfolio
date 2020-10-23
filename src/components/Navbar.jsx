@@ -3,34 +3,47 @@ import styled from "styled-components";
 import logo from '../../src/logo.svg'
 
 const Navbar = () => (
-  <NavWrapper>
-      <nav className="nav-container">
-          <a className="brand" href="https://oluwakayode.netlify.app">
+    <NavWrapper className="navbar navbar-expand-lg navbar-default bg-dark">
+      <a className="navbar-brand" href="https://oluwakayode.netlify.app">
             <img src={logo} alt="logo" loading="lazy" />
           </a>
-          <ul className="menu">
-            <li>
-              <a href="#home">Home</a>
-            </li>
-            <li>
-              <a href="#about">About</a>
-            </li>
-            <li>
-              <a href="#portfolio">Portfolio</a>
-            </li>
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
-          </ul>
-        </nav>
+      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
+      </button>
 
+      <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul className="navbar-nav ml-auto">
+          <li className="nav-item active">
+            <a className="nav-link" href="https://oluwakayode.netlify.app">Home <span className="sr-only">(current)</span></a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="https://oluwakayode.netlify.app">Portfolio</a>
+          </li>
+          {/* <li className="nav-item dropdown">
+            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown
+        </a>
+            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a className="dropdown-item" href="#">Action</a>
+              <a className="dropdown-item" href="#">Another action</a>
+              <div className="dropdown-divider"></div>
+              <a className="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li> */}
+          <li className="nav-item">
+            <a className="nav-link" href="https://oluwakayode.netlify.app">contact</a>
+          </li>
+        </ul>
+      </div>
     </NavWrapper>
-
 );
 
 export default Navbar;
 
-const NavWrapper = styled.div`
+const NavWrapper = styled.nav`
+background-color:#000000 !important;
+// box-shadow: inset 0 0 1000px 1000px rgba(0, 0, 0, 0.747);
+
 .menu li {
   display: inline;
   margin-right: 3em;
@@ -44,15 +57,10 @@ const NavWrapper = styled.div`
   width: 100%;
   padding: 0.5em 1em 0 1em;
 }
-background-color:#000000;
-box-shadow: inset 0 0 1000px 1000px rgba(0, 0, 0, 0.747);
 
 .nav-item{
   color:#ffffff;
   margin-right: 1rem;
 }
 
-// .logo{
-//   margin-right:auto;
-// }
 `

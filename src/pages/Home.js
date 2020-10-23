@@ -123,8 +123,12 @@ aside {
     width: 40px;
     height: 40px;
   }
+  a{
+      transition: background 1s linear;
+  }
   a:hover {
-    font-size: 1.25em;
+    background-color: rgba(255,255,255,0.3);
+    font-weight:400;
     text-decoration: none;
     color: #fff;
   }
