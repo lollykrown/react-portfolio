@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar'
 import down from '../../src/down.svg';
 
 function Home() {
-    const next = useRef(null)
+    const portfolio = useRef(null)
     const third = useRef(null)
 
     const words = [
@@ -32,7 +32,7 @@ function Home() {
 
 
     return (
-        <HomeWrapper className="">
+        <HomeWrapper>
             <Navbar />
             <section className="top">
                 <div className="caption" >
@@ -41,21 +41,80 @@ function Home() {
 
                     </div>
                 </div>
-                <img className="arrow" src={down} alt="down-arrow" onClick={() => window.scrollTo(0, next.current.offsetTop)}/>
+                <img className="arrow" src={down} alt="down-arrow" onClick={() => window.scrollTo(0, portfolio.current.offsetTop)}/>
 
             </section>
 
 
-            <section ref={next} className="next">
-                <div className="caption" >
-                    <div className="box">
-                        <h2 className=""><TypeWriter className="" texts={words} /> </h2>
-                        <br />
-                    </div>
-                </div>
-
-                <button >arrow down</button>
-            </section>
+            <section ref={portfolio} className="third">
+      <h1 className="center">Portfolio</h1>
+      <div className="portfolio">
+        <a href="https://kay-react-ecommerce.netlify.app">
+          <div className="portfolio-container wow pulse">
+            <div className="bg"></div>
+            <img className="img" width="500" height="300"
+              src="https://res.cloudinary.com/lollykrown/image/upload/v1599647132/Portfolios/ecommerce.png" alt="ghj"/>
+            <h3 className="portfolio-title">Ecommerce</h3>
+          </div>
+        </a>
+        {/* <a href="https://oluwakayode.netlify.app">
+          <div class="portfolio-container wow pulse">
+            <div class="bg"></div>
+            <img class="img" width="90%" height="90%"
+              src="https://res.cloudinary.com/lollykrown/image/upload/v1598612374/Portfolios/triangle2.png">              
+            <h3 class="portfolio-title">Triangle</h3>
+          </div>
+        </a>
+        <a href="https://github.com/lollykrown/Templates/tree/master/Portfolio%20Templates">
+          <div class="portfolio-container wow pulse">
+            <div class="bg"></div>
+            <img class="img" width="500" height="300"
+              src="https://res.cloudinary.com/lollykrown/image/upload/v1597944493/Portfolios/portfolio-black1.png">
+            <h3 class="portfolio-title">Black Portfolio </h3>
+          </div>
+        </a>
+        <a href="https://lollykrown.xyz">
+          <div class="portfolio-container wow pulse">
+            <div class="bg"></div>
+            <img class="img" width="500" height="300"
+              src="https://res.cloudinary.com/lollykrown/image/upload/v1597944476/Portfolios/blue.png">
+            <h3 class="portfolio-title">Blue Portfolio</h3>
+          </div>
+        </a>
+        <a href="https://naija-tourist.herokuapp.com">
+          <div class="portfolio-container wow pulse">
+            <div class="bg"></div>
+            <img class="img" width="500" height="300"
+            src="https://res.cloudinary.com/lollykrown/image/upload/v1600288517/Portfolios/tourism.png">
+            <h3 class="portfolio-title">Tourist App</h3>
+          </div>
+        </a>
+        <a href="https://github.com/lollykrown/Templates/tree/master/Portfolio%20Templates">
+          <div class="portfolio-container wow pulse">
+            <div class="bg"></div>
+            <img class="img" width="500" height="300"
+              src="https://res.cloudinary.com/lollykrown/image/upload/v1597946060/Portfolios/position.png">
+            <h3 class="portfolio-title">Position</h3>
+          </div>
+        </a>
+        <a href="https://github.com/lollykrown/Templates/tree/master/Portfolio%20Templates">
+          <div class="portfolio-container wow pulse">
+            <div class="bg"></div>
+            <img class="img" width="500" height="300"
+            src="https://res.cloudinary.com/lollykrown/image/upload/v1598375046/Portfolios/tri.png">
+            <h3 class="portfolio-title">Triangle Portfolio 2</h3>
+          </div>
+        </a>
+        <a href="https://github.com/lollykrown/Templates/tree/master/Portfolio%20Templates">
+          <div class="portfolio-container wow pulse">
+            <div class="bg"></div>
+            <img class="img" width="500" height="300"
+              src="https://res.cloudinary.com/lollykrown/image/upload/v1597944500/Portfolios/portfolio-black2.png">
+            <h3 class="portfolio-title">Black Portfolio 2</h3>
+          </div>
+        </a> */}
+      </div>
+    </section>
             <section ref={third} className="third">
                 <div className="next">
                     <div className="caption" >
@@ -81,10 +140,9 @@ function Home() {
 export default Home
 
 const HomeWrapper = styled.div`
-// background-color:#000000;
 
 .top{
-    height: 92vh;
+    height: 86vh;
     width: 100%;
     background: url('/img/bg.jpg');
     background-size: cover;
@@ -158,6 +216,22 @@ const HomeWrapper = styled.div`
     background-color:rgba(255, 255, 255, 0.3);
     border-radius: 3rem;      
 }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .arrow {
+      animation: App-logo-spin infinite 20s linear;
+    }
+  }
+  
+keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
 //   .about {
 //     color: #bbb;
 //     font-size: 1.2rem;
