@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from "styled-components";
-import logo from '../../src/'
+import logo from '../../src/logo.svg'
 
 const Navbar = () => (
   <NavWrapper>
       <ul className="menu">
-          <li className="nav-item logo">Logo</li>
+          <li className="nav-item logo"><img src={logo} alt="logo"/></li>
           <li className="nav-item">Logo</li>
           <li className="nav-item">Logo</li>
           <li className="nav-item">Logo</li>

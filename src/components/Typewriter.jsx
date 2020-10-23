@@ -10,7 +10,6 @@ const TypeWriter = ({ texts }) => (
       cursor: '!',
       loop: true,
       deleteSpeed: 50,
-      wrapperClassName: 'sars_tags'
     }}
   />
 );

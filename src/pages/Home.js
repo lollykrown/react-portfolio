@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import TypeWriter from '../components/Typewriter'
 import styled from "styled-components";
 import Navbar from '../components/Navbar'
+import down from '../../src/down.svg';
 
 function Home() {
     const next = useRef(null)
@@ -37,10 +38,10 @@ function Home() {
                 <div className="caption" >
                     <div className="box">
                         <h2 className=""><TypeWriter className="" texts={words} /> </h2>
+
                     </div>
                 </div>
-                {/* <button onClick={() => window.scrollTo({top:window.innerHeight, behavior: 'smooth'})}>arrow down</button> */}
-                <button className="btn" onClick={() => window.scrollTo(0, next.current.offsetTop)}>arrow down</button>
+                <img className="arrow" src={down} alt="down-arrow" onClick={() => window.scrollTo(0, next.current.offsetTop)}/>
 
             </section>
 
@@ -63,6 +64,7 @@ function Home() {
                             <br />
                         </div>
                     </div>
+                    <img src={down} alt="jhh"/>
 
                     <button >arrow down</button>
                 </div>
@@ -84,7 +86,7 @@ const HomeWrapper = styled.div`
 .top{
     height: 92vh;
     width: 100%;
-    background: url('/bg.jpg');
+    background: url('/img/bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     box-shadow: inset 0 0 1000px 1000px rgba(0, 0, 0, 0.747);
@@ -121,7 +123,6 @@ const HomeWrapper = styled.div`
     width: 100%;
     justify-content: center;
     align-items: center;
-    z-index
   }
   h2{
       width:max-content;
@@ -143,14 +144,20 @@ const HomeWrapper = styled.div`
     }
   }
   .btn {
-    margin:0 auto;
-    padding: 0.8rem 2rem;
+
     font-size: 16px;
     border-radius: 3px;
-    background: #ffffff;
-    color: black;
   }
-  
+  .arrow{
+      width:50px;
+      height:50px;
+      margin:0 auto;
+      padding: 1rem;
+  }
+  .arrow:hover {
+    background-color:rgba(255, 255, 255, 0.3);
+    border-radius: 3rem;      
+}
 //   .about {
 //     color: #bbb;
 //     font-size: 1.2rem;
