@@ -150,7 +150,7 @@ aside {
     //sm
   @media (min-width: 576px) {
     h1 {
-      font-size: 2.125rem;
+      font-size: 1.9rem;
     }
   }
   //md
