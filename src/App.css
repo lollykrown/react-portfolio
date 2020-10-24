@@ -4,3 +4,6 @@ html {
 img{
     z-index:10;
 }
+a{
+  cursor: grab;
+}

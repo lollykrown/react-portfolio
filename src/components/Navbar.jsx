@@ -6,9 +6,9 @@ const Navbar = () => (
   <NavWrapper>
       <ul className="menu">
           <li className="nav-item logo"><img src={logo} alt="logo"/></li>
-          <li className="nav-item">Logo</li>
-          <li className="nav-item">Logo</li>
-          <li className="nav-item">Logo</li>
+          <li className="nav-item mt-2">Portfolio</li>
+          <li className="nav-item mt-2">About</li>
+          <li className="nav-item mt-2">Contact</li>
       </ul>
 
     </NavWrapper>
@@ -29,12 +29,14 @@ margin:0;
   display: -webkit-flex; 
   display: flex;
 }
-
+.mt-2{
+  margin-top:1rem;
+}
 ul {
   list-style-type: none;
   margin-block-start: 0;
   margin-block-end: 0;
-  padding: 1rem 3rem;
+  padding: 1rem 3rem 0 3rem;
 }
 
 .nav-item{
