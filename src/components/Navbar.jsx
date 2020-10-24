@@ -36,7 +36,7 @@ ul {
   list-style-type: none;
   margin-block-start: 0;
   margin-block-end: 0;
-  padding: 1rem 3rem 0 3rem;
+  padding: 1rem 3rem;
 }
 
 .nav-item{

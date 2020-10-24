@@ -109,8 +109,8 @@ function Home() {
                 <h1>Contact</h1>
                 <ul className="links">
                     <li className="icon"><a href="https://github.com/lollykrown"><i className="fa fa-github"></i></a></li>
-                    <li className="icon"><a href="https://twitter.com/lollykrown"><i className="fa fa-twitter "></i></a></li>
-                    <li className="icon"><a href="https://whatsapp.com/lollykrown"><i className="fa fa-whatsapp "></i></a></li>
+                    <li className="icon"><a href="https://twitter.com/oluwakayy"><i className="fa fa-twitter "></i></a></li>
+                    <li className="icon"><a href="https://wa.me/+2347034750495"><i className="fa fa-whatsapp "></i></a></li>
                 </ul>
                 <h3 className="email-label">Email</h3>
                 <a className="email" href="mailto:lollykrown@gmail.com">lollykrown@gmail.com</a>
@@ -196,7 +196,8 @@ const HomeWrapper = styled.div`
   }
   .arrow:hover {
     background-color:rgba(255, 255, 255, 0.3);
-    border-radius: 3rem;      
+    border-radius: 3rem;   
+    cursor:grab;   
 }
   
 //   @media (prefers-reduced-motion: no-preference) {
@@ -282,6 +283,7 @@ a {
 }
 a:hover {
     color: #fff;
+    font-weight:500;
 }
 .form {
     position: relative;
