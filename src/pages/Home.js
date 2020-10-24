@@ -141,7 +141,7 @@ aside {
     text-transform: uppercase;
     text-shadow: 2px 2px #fff8dc;
     color: #202020;
-    font-size: 1.3rem;
+    font-size: 1.15rem;
     font-weight: 500;
     letter-spacing: 0.5em;
     text-align: center;
@@ -150,7 +150,7 @@ aside {
     //sm
   @media (min-width: 576px) {
     h1 {
-      font-size: 1.8rem;
+      font-size: 2.125rem;
     }
   }
   //md
