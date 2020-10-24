@@ -60,7 +60,7 @@ function Home() {
         },
         {
             name: 'Black Portfolio 2',
-            website: 'https://github.com/lollykrown/Templates/tree/master/Portfolio%20Templates',
+            website: 'https://nazarite.netlify.app/',
             imgUrl: 'https://res.cloudinary.com/lollykrown/image/upload/v1597944500/Portfolios/portfolio-black2.png'
         },
         {
