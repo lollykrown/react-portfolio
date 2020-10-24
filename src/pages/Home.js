@@ -188,7 +188,7 @@ const HomeWrapper = styled.div`
   .arrow{
       width:80px;
       height:80px;
-      margin:0 auto 1.5rem auto;
+      margin:0 auto 1.75rem auto;
       padding: 1rem;
   }
   .arrow:hover {
@@ -238,6 +238,7 @@ const HomeWrapper = styled.div`
 .center {
     text-align:center;
     font-size: 3rem;
+    text-shadow: 4px 4px 6px rgba(0,0,0,0.4);
 }
 .bg {
     width: 90%;
@@ -334,7 +335,7 @@ textarea {
           height:120px;
       }
     .top {
-        height: 84vh;
+        height: 82vh;
       }
       .row {
           display:table;
