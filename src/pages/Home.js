@@ -3,12 +3,18 @@ import TypeWriter from '../components/Typewriter'
 import styled from "styled-components";
 import Navbar from '../components/Navbar'
 import down from '../../src/down.svg';
-import logo from '../../src/logo.svg'
 
 function Home() {
     const portfolio = useRef(null)
     const contact = useRef(null)
 
+    const gotoPortfolio =() => {
+        window.scrollTo(0, portfolio.current.offsetTop)
+    }
+    const gotoContact =() => {
+        console.log('kk',portfolio.current.offsetTop, contact.current.clientHeight)
+        window.scrollTo(contact.current.clientWidth, contact.current.clientHeight)
+    }
     const words = [
         `I'm Olu\u0301waka\u0301yo\u0300d\u00E9`,
         "A Software Developer ",
@@ -57,15 +63,20 @@ function Home() {
             imgUrl: 'https://res.cloudinary.com/lollykrown/image/upload/v1597946060/Portfolios/position.png'
         },
         {
-            name: 'Tourist App',
+            name: 'Triangle 2',
             website: 'https://github.com/lollykrown/Templates/tree/master/Portfolio%20Templates',
             imgUrl: 'https://res.cloudinary.com/lollykrown/image/upload/v1598375046/Portfolios/tri.png'
         },
+        {
+            name: 'Black Portfolio 2',
+            website: 'https://github.com/lollykrown/Templates/tree/master/Portfolio%20Templates',
+            imgUrl: 'https://res.cloudinary.com/lollykrown/image/upload/v1597944500/Portfolios/portfolio-black2.png'
+        }
     ]
 
     return (
         <HomeWrapper>
-            <Navbar />
+            <Navbar gotoPortfolio={gotoPortfolio} gotoContact={gotoContact}/>
             <section className="top">
                 <div className="caption" >
                     <div className="box">
@@ -73,11 +84,11 @@ function Home() {
                         <h2 className="l"> 👋 </h2>
                     </div>
                 </div>
-                <img className="arrow" src={down} alt="down-arrow" onClick={() => window.scrollTo(0, portfolio.current.offsetTop)} />
+                <img className="arrow" src={down} alt="down-arrow" onClick={() => gotoPortfolio()} />
 
             </section>
 
-            <section ref={portfolio} className="">
+            <section ref={portfolio} className="portfolio">
                 <h1 className="center">Portfolio</h1>
                 {siteDetails.map((site, index) => {
                     return (
@@ -91,50 +102,36 @@ function Home() {
                     </a>)
                 })
                 }
-
-                {/*
-       
-        <a href="https://github.com/lollykrown/Templates/tree/master/Portfolio%20Templates">
-          <div class="portfolio-container wow pulse">
-            <div class="bg"></div>
-            <img class="img" width="500" height="300"
-              src="https://res.cloudinary.com/lollykrown/image/upload/v1597944500/Portfolios/portfolio-black2.png">
-            <h3 class="portfolio-title">Black Portfolio 2</h3>
-          </div>
-        </a> */}
                 
             </section>
-            {/* <footer class="footer">
-                <div class="form wow pulse" id="contact">
+
+            <section ref={contact} className="footer">
+                <div className="form" id="contact">
                     <form name="contact" method="POST" data-netlify="true">
-                        <p class="col">Please feel free to contact me for freelance project and collaboration</p>
+                        <p className="col">Please feel free to contact me for freelance project and collaboration</p>
                         <input type="text" id="name" name="name" placeholder="Name" required />
                         <input type="email" id="email" name="email" placeholder="Email" required />
                         <textarea type="text" id="message" name="message" placeholder="Message" required></textarea>
-                        <input type="submit" class="btn-send" />
+                        <input type="submit" className="btn-send" />
                     </form>
                 </div>
                 <h1>Contact</h1>
-                <ul class="links">
-                    <li class="icon"><a href="https://github.com/lollykrown"><i class="fa fa-github"
-                        style="font-size:1.25em;color:#a4a4a4;margin-left: -1.8em;"></i></a></li>
-                    <li class="icon"><a href="https://twitter.com/lollykrown"><i class="fa fa-twitter "
-                        style="font-size:1.25em;color:#a4a4a4;"></i></a></li>
-                    <li class="icon"><a href="https://whatsapp.com/lollykrown"><i class="fa fa-whatsapp "
-                        style="font-size:1.25em;color:#a4a4a4;"></i></a></li>
+                <ul className="links">
+                    <li className="icon"><a href="https://github.com/lollykrown"><i className="fa fa-github"
+                        style={{fontSize:"1.25em",color:"#fff",marginLeft: "-1.8em"}}></i></a></li>
+                    <li className="icon"><a href="https://twitter.com/lollykrown"><i className="fa fa-twitter "
+                        style={{fontSize:"1.25em",color:"#fff"}}></i></a></li>
+                    <li className="icon"><a href="https://whatsapp.com/lollykrown"><i className="fa fa-whatsapp "
+                        style={{fontSize:"1.25em",color:"#fff"}}></i></a></li>
                 </ul>
-                <h3 class="email-label">Email</h3>
-                <a class="email" href="mailto:lollykrown@gmail.com">lollykrown@gmail.com</a>
-                <h3 class="skype-label">Skype</h3>
-                <p class="skype">Oluwakayy</p>
+                <h3 className="email-label">Email</h3>
+                <a className="email" href="mailto:lollykrown@gmail.com">lollykrown@gmail.com</a>
+                <h3 className="skype-label">Skype</h3>
+                <p className="skype">Oluwakayy</p>
 
-                <p class="footnotes">&copy; 2020 <a href="https://lollykrown.netlify.app"
-                    target="_blank">Ol&#250;wak&#225;y&#242;d&#233;.</a> All rights reserved.</p>
-            </footer>
- */}
-
-
-
+                <p className="footnotes">&copy; 2020 <a href="https://lollykrown.netlify.app"
+                  rel="noopener noreferrer"  target="_blank">Ol&#250;wak&#225;y&#242;d&#233;.</a> All rights reserved.</p>
+            </section>
 
 
         </HomeWrapper >
@@ -144,7 +141,9 @@ function Home() {
 export default Home
 
 const HomeWrapper = styled.div`
-
+.fa {
+    color:white;
+}
 .top{
     height: 88vh;
     width: 100%;
@@ -230,7 +229,7 @@ const HomeWrapper = styled.div`
   .column {
     float: left;
     width: 50%;
-    padding: 10px;
+    padding: 20px;
   }
   
   .portfolio:after {
@@ -261,8 +260,6 @@ const HomeWrapper = styled.div`
     font-size: 3rem;
 }
 .bg {
-    background-color: #000fff;
-    box-shadow: inset 0 0 1000px 1000px rgba(0, 0, 0, 0.747);
     width: 90%;
     height: 92%;
     position: absolute;
@@ -270,6 +267,78 @@ const HomeWrapper = styled.div`
     top:2rem;
     z-index: -1;
 }
+.bg, .footer {
+    color:#fff;
+    //background-color: #000fff;
+    box-shadow: inset 0 0 1000px 1000px rgba(0, 0, 0, 0.747);
+}
+.footer {
+    //background-color: #000;
+    padding: 1em 6em;
+    margin-top: 2em;
+}
+.links li{
+    display: inline;
+}
+// .icon {
+//     margin-right: 1.5em;
+// }
+.icon a {
+    color: #6d6d6d;
+}
+// .form {
+//     position: relative;
+//     bottom: 4.5em;
+// }
+// form {
+//     background-color: #000fff;
+//     color: #ffffff;
+//     padding: 3em;
+//     width: 25%;
+//     float: right;
+//     box-shadow: 5px 10px 15px 10px rgba(0,0,0,0.35)
+// }
+// input, textarea {
+//     width: 100%;
+//     border: none;
+//     border-bottom: 1px solid #ffffff;
+//     background-color: #000fff;
+//     color: #ffffff;
+// }
+// input {
+//     margin-top: 1.5em;
+//     margin-bottom: 0.5em;
+// }
+// input:focus {
+//     border: none;
+//     border-bottom: 1px solid #d1d1d1;
+//   }
+// ::placeholder {
+//     color: #d1d1d1;
+// }
+// .col {
+//     color: #d1d1d1
+// }
+// textarea {
+//     height: 4em;
+//     margin-bottom: 1.75em;
+// }
+// .btn-send {
+//     background-color: #ffffff;
+//     padding: .75em 4em;
+//     color: #000fff;
+//     font-weight: 600;
+//     text-transform: uppercase;
+//     display: block;
+//     width: max-content;
+// }
+// .footnotes {
+//     margin-top: 3em;
+//     text-align: center;
+//     color: rgba(0, 0, 0, 0.6)
+// }
+
+
 @media (max-width: 600px) {
 
   }
