@@ -1,15 +1,13 @@
 import React from 'react'
 import TypeWriter from '../components/Typewriter'
 import styled from "styled-components";
-import Navbar from '../components/Navbar'
 import right from '../../src/right.svg';
 
-function Home() {
+function Portfolio() {
 
     return (
         <HomeWrapper className="container-fluid">
             <div className="custom-container">
-                <Navbar />
 
                 <main className="">
                     <aside>
@@ -48,107 +46,10 @@ function Home() {
     )
 }
 
-export default Home
+export default Portfolio
 
 const HomeWrapper = styled.div`
 
-    height: 92vh;
-    width: 100%;
-    background: url('/img/bg.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    box-shadow: inset 0 0 1000px 1000px rgba(0, 0, 0, 0.747);
 
-    .custom-container {
-        position: relative;
-        border: 0.25em solid #ffffff;
-        margin: 1em;
-        border-radius: 1em;
-        padding: 1em;
-        min-height: 100%;
-        height: 90vh;
-      }
-aside {
-    width: 5%;
-    position: fixed;
-    top: 40%;
-    left: 3%;
-    color: #ffffff;
-    z-index: 11;
-  }
-  aside li {
-    list-style: none;
-    margin-bottom: 0.5em;
-  }
-  .bottom {
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    padding: 0 2em 0 1.75em;
-  }
-  .left {
-    float: left;
-  }
-  .right {
-    float: right;
-    position: relative;
-    top: 1.5em;
-  }
-  footer {
-    position: fixed;
-    bottom: 0;
-  }
-  .arrow {
-    width: 40px;
-    height: 40px;
-  }
-  a{
-      transition: background 1s linear;
-  }
-  a:hover {
-    background-color: rgba(255,255,255,0.3);
-    font-weight:400;
-    text-decoration: none;
-    color: #fff;
-  }
-  .name {
-    text-align: center;
-    position: absolute;
-    top: 45%;
-  }
-  h1 {
-    text-transform: uppercase;
-    text-shadow: 2px 2px #fff8dc;
-    color: #202020;
-    font-size: 1.15rem;
-    font-weight: 500;
-    letter-spacing: 0.5em;
-    text-align: center;
-
-  }
-    //sm
-  @media (min-width: 576px) {
-    h1 {
-      font-size: 2.125rem;
-    }
-  }
-  //md
-  @media (min-width: 768px) {
-    h1 {
-      font-size: 3rem;
-    }
-  }
-  //lg
-  @media (min-width: 992px) {
-    h1 {
-        font-size: 4rem;
-      }
-  }
-  //xl
-  @media (min-width: 1200px) {
-    h1 {
-      font-size: 4.9rem;
-    }
-  }
 
 `;
