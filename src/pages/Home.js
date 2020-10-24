@@ -255,7 +255,7 @@ const HomeWrapper = styled.div`
 }
 .footer {
     background-color: #000;
-    padding: 1em 6em;
+    padding: 1rem 5rem;
     margin-top: 2em;
 }
 .links{
@@ -323,12 +323,12 @@ textarea {
     width: max-content;
 }
 .footnotes {
-    margin-top: 3em;
+    margin-top: 3rem;
 }
 
 @media only screen and (max-width: 767px) { 
     .footer {
-        padding: 1em 3em;
+        padding: 1em 2rem;
     }
     .caption h2 {
         font-size: 1.5rem;
