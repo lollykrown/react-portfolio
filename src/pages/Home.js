@@ -327,6 +327,9 @@ textarea {
 }
 
 @media only screen and (max-width: 767px) { 
+    .footer {
+        padding: 1em 3em;
+    }
     .caption h2 {
         font-size: 1.5rem;
       }
@@ -346,7 +349,6 @@ textarea {
     form {
         padding: 2em;
         width: 100%;
-        padding: 10px;
     }
     .fa:hover{
         font-size:1.35rem;
