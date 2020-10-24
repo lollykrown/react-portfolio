@@ -31,7 +31,7 @@ function Home() {
                             <li className="icon"><a href="https://github.com/lollykrown"><i className="fa fa-github" style={{ fontSize: "1.25em", color: "#ffffff" }}></i></a></li>
                             <li className="icon"><a href="https://twitter.com/lollykrown"><i className="fa fa-twitter " style={{ fontSize: "1.25em", color: "#ffffff" }}></i></a></li>
                             <li className="icon"><a href="https://facebook.com/lollykrown"><i className="fa fa-facebook " style={{ fontSize: "1.25em", color: "#ffffff" }}></i></a></li>
-                            <li className="icon"><a href="https://whatsapp.com/lollykrown"><i className="fa fa-whatsapp " style={{ fontSize: "1.25em", color: "#ffffff" }}></i></a></li>
+                            <li className="icon"><a href="https://wa.me/+2347034750495"><i className="fa fa-whatsapp " style={{ fontSize: "1.25em", color: "#ffffff" }}></i></a></li>
                             <li className="icon"><a href="https://linkedin.com/lollykrown"><i className="fa fa-linkedin " style={{ fontSize: "1.25em", color: "#ffffff" }}></i></a></li>
                         </ul>
                     </aside>
