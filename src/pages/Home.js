@@ -17,7 +17,7 @@ function Home() {
     ]
 
     useEffect(() => {
-        window.scrollTo({ top: 0, behavior: 'smooth' })
+        // window.scrollTo({ top: 0, behavior: 'smooth' })
 
 
         return () => {
@@ -25,7 +25,43 @@ function Home() {
         }
     }, [])
 
-
+    const siteDetails = [
+        {
+            name: 'Ecommerce',
+            website: 'https://kay-react-ecommerce.netlify.app',
+            imgUrl: 'https://res.cloudinary.com/lollykrown/image/upload/v1599647132/Portfolios/ecommerce.png'
+        },
+        {
+            name: 'Triangle',
+            website: 'https://oluwakayode.netlify.app',
+            imgUrl: 'https://res.cloudinary.com/lollykrown/image/upload/v1598612374/Portfolios/triangle2.png'
+        },
+        {
+            name: 'Black Portfolio',
+            website: 'https://github.com/lollykrown/Templates/tree/master/Portfolio%20Templates',
+            imgUrl: 'https://res.cloudinary.com/lollykrown/image/upload/v1597944493/Portfolios/portfolio-black1.png'
+        },
+        {
+            name: 'Blue Portfolio',
+            website: 'https://lollykrown.xyz',
+            imgUrl: 'https://res.cloudinary.com/lollykrown/image/upload/v1597944476/Portfolios/blue.png'
+        },
+        {
+            name: 'Tourist App',
+            website: 'https://naija-tourist.herokuapp.com',
+            imgUrl: 'https://res.cloudinary.com/lollykrown/image/upload/v1600288517/Portfolios/tourism.png'
+        },
+        {
+            name: 'Position',
+            website: 'https://github.com/lollykrown/Templates/tree/master/Portfolio%20Templates',
+            imgUrl: 'https://res.cloudinary.com/lollykrown/image/upload/v1597946060/Portfolios/position.png'
+        },
+        {
+            name: 'Tourist App',
+            website: 'https://github.com/lollykrown/Templates/tree/master/Portfolio%20Templates',
+            imgUrl: 'https://res.cloudinary.com/lollykrown/image/upload/v1598375046/Portfolios/tri.png'
+        },
+    ]
 
     return (
         <HomeWrapper>
@@ -41,66 +77,23 @@ function Home() {
 
             </section>
 
-
-            <section ref={portfolio} className="portfolio-parent">
+            <section ref={portfolio} className="">
                 <h1 className="center">Portfolio</h1>
-                <div className="portfolio">
-                    <a className="column" href="https://kay-react-ecommerce.netlify.app">
-                        <div className="portfolio-container wow pulse">
+                {siteDetails.map((site, index) => {
+                    return (
+                    <a className="column" key={index} href={site.website}>
+                        <div className="portfolio-container ">
                             <div className="bg"></div>
                             <img className="img" width="500" height="300"
-                                src="https://res.cloudinary.com/lollykrown/image/upload/v1599647132/Portfolios/ecommerce.png" alt="ghj" />
-                            <h3 className="portfolio-title">Ecommerce</h3>
+                                src={site.imgUrl} alt={site.name} />
+                            <h3 className="portfolio-title">{site.name}</h3>
                         </div>
-                    </a>
-                    <a className="column" href="https://oluwakayode.netlify.app">
-                        <div class="portfolio-container wow pulse">
-                            <div class="bg"></div>
-                            <img class="img" width="90%" height="90%"
-                                src="https://res.cloudinary.com/lollykrown/image/upload/v1598612374/Portfolios/triangle2.png" />
-                            <h3 class="portfolio-title">Triangle</h3>
-                        </div>
-                    </a>
-                    {/*  <a href="https://github.com/lollykrown/Templates/tree/master/Portfolio%20Templates">
-          <div class="portfolio-container wow pulse">
-            <div class="bg"></div>
-            <img class="img" width="500" height="300"
-              src="https://res.cloudinary.com/lollykrown/image/upload/v1597944493/Portfolios/portfolio-black1.png">
-            <h3 class="portfolio-title">Black Portfolio </h3>
-          </div>
-        </a>
-        <a href="https://lollykrown.xyz">
-          <div class="portfolio-container wow pulse">
-            <div class="bg"></div>
-            <img class="img" width="500" height="300"
-              src="https://res.cloudinary.com/lollykrown/image/upload/v1597944476/Portfolios/blue.png">
-            <h3 class="portfolio-title">Blue Portfolio</h3>
-          </div>
-        </a>
-        <a href="https://naija-tourist.herokuapp.com">
-          <div class="portfolio-container wow pulse">
-            <div class="bg"></div>
-            <img class="img" width="500" height="300"
-            src="https://res.cloudinary.com/lollykrown/image/upload/v1600288517/Portfolios/tourism.png">
-            <h3 class="portfolio-title">Tourist App</h3>
-          </div>
-        </a>
-        <a href="https://github.com/lollykrown/Templates/tree/master/Portfolio%20Templates">
-          <div class="portfolio-container wow pulse">
-            <div class="bg"></div>
-            <img class="img" width="500" height="300"
-              src="https://res.cloudinary.com/lollykrown/image/upload/v1597946060/Portfolios/position.png">
-            <h3 class="portfolio-title">Position</h3>
-          </div>
-        </a>
-        <a href="https://github.com/lollykrown/Templates/tree/master/Portfolio%20Templates">
-          <div class="portfolio-container wow pulse">
-            <div class="bg"></div>
-            <img class="img" width="500" height="300"
-            src="https://res.cloudinary.com/lollykrown/image/upload/v1598375046/Portfolios/tri.png">
-            <h3 class="portfolio-title">Triangle Portfolio 2</h3>
-          </div>
-        </a>
+                    </a>)
+                })
+                }
+
+                {/*
+       
         <a href="https://github.com/lollykrown/Templates/tree/master/Portfolio%20Templates">
           <div class="portfolio-container wow pulse">
             <div class="bg"></div>
@@ -109,7 +102,7 @@ function Home() {
             <h3 class="portfolio-title">Black Portfolio 2</h3>
           </div>
         </a> */}
-                </div>
+                
             </section>
             {/* <footer class="footer">
                 <div class="form wow pulse" id="contact">
@@ -144,7 +137,7 @@ function Home() {
 
 
 
-        </HomeWrapper>
+        </HomeWrapper >
     )
 }
 
@@ -165,14 +158,7 @@ const HomeWrapper = styled.div`
     box-sizing: border-box;
     z-index:1;
 }
-  @media (max-width: 600px) {
-    .top {
-      height: 84vh;
-    }
-  }
-  .white{
-      color:#ffffff;
-  }
+
   .box{
     margin:0 auto;
     z-index:-1;
@@ -209,18 +195,16 @@ const HomeWrapper = styled.div`
     .box{
         width:220px;
         height:120px;
-
     }
   }
   .btn {
-
     font-size: 16px;
     border-radius: 3px;
   }
   .arrow{
-      width:50px;
-      height:50px;
-      margin:0 auto;
+      width:80px;
+      height:80px;
+      margin:0 auto 1.5rem auto;
       padding: 1rem;
   }
   .arrow:hover {
@@ -228,201 +212,105 @@ const HomeWrapper = styled.div`
     border-radius: 3rem;      
 }
   
-  @media (prefers-reduced-motion: no-preference) {
-    .arrow {
-      animation: App-logo-spin infinite 20s linear;
-    }
-  }
+//   @media (prefers-reduced-motion: no-preference) {
+//     .arrow {
+//       animation: App-logo-spin infinite 20s linear;
+//     }
+//   }
   
-keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
+// keyframes App-logo-spin {
+//     from {
+//       transform: rotate(0deg);
+//     }
+//     to {
+//       transform: rotate(360deg);
+//     }
+//   }
 
   .column {
     float: left;
     width: 50%;
     padding: 10px;
-    height: 300px; /* Should be removed. Only for demonstration */
   }
   
-  /* Clear floats after the columns */
   .portfolio:after {
     content: "";
     display: table;
     clear: both;
   }
-  
-  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 600px) {
-    .column {
-      width: 100%;
-    }
-  }
 
-//  .portfolio-parent {
-//     padding: 3em;
-//     margin: 0 3em 6em 3em;;
-//     columns: 2;
-// }
-//   .portfolio-container {
-//     position: relative;
-//     margin: 0 0 6em 0;
-// }
 .img {
     width: 90%;
     height: 70%;
-    margin-left: 3em;
+    margin-left: 1rem;
     z-index: 11;
     box-shadow: 5px 15px 15px 15px rgba(0,0,0,0.35)
 }
+.portfolio-container {
+    position: relative;
+    margin: 0 0 3em 0;
+}
 .portfolio-title {
-    margin-left: 3em;
+    margin-left: 1rem;
     margin-top: 0;
     color: #ffffff;
-    /* width: 400px;
     max-width: 400px; */
 }
 .center {
-    margin: 3em 0 0 9.5em
+    text-align:center;
+    font-size: 3rem;
 }
+.bg {
+    background-color: #000fff;
+    box-shadow: inset 0 0 1000px 1000px rgba(0, 0, 0, 0.747);
+    width: 90%;
+    height: 92%;
+    position: absolute;
+    left:0;
+    top:2rem;
+    z-index: -1;
+}
+@media (max-width: 600px) {
 
-
-
+  }
 
 
 
 @media only screen and (max-width: 767px) { 
-    .hello, p.details {
-        display: none;
-    }
-    .pattern {
-        width: 85%;
-    }
-    .brand {
-        position: absolute;
-        left: .6em;
-        top:-0.25em;
-        margin-top: 1em;
-    }
-    header {
-        position: absolute;
-        top: 1.5em;
-        left: .25em;
-        width: 90%
-    }
-    .pic-frame {
-        width: 65%;
-        height: 50%;
-        top: 140px;
-        left: 120px;
-    }
-    p.details {
-        position: absolute;
-        bottom: 120px;
-        left: 120px;
-        width: 310px
-    }
-    .btn {
-        position: absolute;
-        bottom: 60px;
-        left: 120px;
-    }
-    .portfolio {
-        columns: 1;
-        margin: 0 1em 6em 1em;;
-    }
-    .img {
-        width: 90%;
-        height: 70%;
-    }
-    .bg {
-        width: 90%;
-        height: 90%;
-        position: absolute;
-        left:0;
-        top:2em;
-        z-index: -1
-    }
-    .portfolio-container {
-        position: relative;
-        margin: 0 0 6em 0;
-    }
-    .img {
-        z-index: 11;
-        box-shadow: 5px 10px 15px 10px rgba(0,0,0,0.35)
-    }
-    .portfolio-title {
-        margin-left: 3em;
-        margin-top: 0;
-        color: #ffffff;
-    }
-    .center {
-        margin: 3em 0 .5em 1.5em
-    }
-    .email, .email-label, .skype,.skype-label {
-        display: none;
-    }
-    form {
-        padding: 2em;
-        width: 100%;
-        padding: 10px;
-    }
-    footer{
-        padding: 1em 3em;
-    }
-    .right {
-        position: absolute;
-        right: 0
-    }
-    img[src="sq-fill.svg"]{
-        width: 3.125em;
-        height:3.125em
-    }
-    .fa, .fa-twitter, .fa-github, .fa-whatsapp {
-        font-size:1.25em !important;
-    }
+    .top {
+        height: 84vh;
+      }
+      .column {
+          width: 100%;
+        }
+    // .email, .email-label, .skype,.skype-label {
+    //     display: none;
+    // }
+    // form {
+    //     padding: 2em;
+    //     width: 100%;
+    //     padding: 10px;
+    // }
+    // footer{
+    //     padding: 1em 3em;
+    // }
+    // .right {
+    //     position: absolute;
+    //     right: 0
+    // }
+    // img[src="sq-fill.svg"]{
+    //     width: 3.125em;
+    //     height:3.125em
+    // }
+    // .fa, .fa-twitter, .fa-github, .fa-whatsapp {
+    //     font-size:1.25em !important;
+    // }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) { 
-    .hello {
-        display: inline;
-        margin-left: .6em
-    }
-    .pic-frame {
-        top: 9em;
-        left: 6em;
-    }
-     p.details {
-        position: relative;
-        left: 2.4em;
-        width: 60%
-    }
-    .btn {
-        position: relative;
-        left: 2.4em;
-    }
-    .portfolio {
-        columns: 1;
-        margin: 0 1em 6em 1em;;
-    }
-    .img {
-        width: 80%;
-        height: 50%;
-    }
-    .center {
-        margin: 3em 0 .5em 4em
-    }
+
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) { 
-    .pic-frame {
-        top: 140px;
-        left: 100px;
-    }
+
 }
 
 `;
