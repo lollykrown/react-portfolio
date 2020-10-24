@@ -62,12 +62,17 @@ function Home() {
             name: 'Black Portfolio 2',
             website: 'https://github.com/lollykrown/Templates/tree/master/Portfolio%20Templates',
             imgUrl: 'https://res.cloudinary.com/lollykrown/image/upload/v1597944500/Portfolios/portfolio-black2.png'
+        },
+        {
+            name: 'Mini Netlify',
+            website: 'https://min-netflix.netlify.app',
+            imgUrl: 'https://res.cloudinary.com/lollykrown/image/upload/v1603489570/Portfolios/min-netflix.png'
         }
     ]
 
     return (
         <HomeWrapper>
-            <Navbar/>
+            <Navbar />
             <section className="top">
                 <div className="caption" >
                     <div className="box">
@@ -81,19 +86,21 @@ function Home() {
 
             <section ref={portfolio} className="portfolio" id="portfolio">
                 <h1 className="center">Portfolio</h1>
-                {siteDetails.map((site, index) => {
-                    return (
-                    <a className="column" key={index} href={site.website}>
-                        <div className="portfolio-container ">
-                            <div className="bg"></div>
-                            <img className="img" width="500" height="300"
-                                src={site.imgUrl} alt={site.name} />
-                            <h3 className="portfolio-title">{site.name}</h3>
-                        </div>
-                    </a>)
-                })
-                }
-                
+                <div className="row">
+                    {siteDetails.map((site, index) => {
+                        return (
+                            <a className="column" key={index} href={site.website}>
+                                <div className="portfolio-container ">
+                                    <div className="bg"></div>
+                                    <img className="img" width="500" height="300"
+                                        src={site.imgUrl} alt={site.name} />
+                                    <h3 className="portfolio-title">{site.name}</h3>
+                                </div>
+                            </a>
+                        )
+                    })
+                    }
+                </div>
             </section>
 
             <section className="footer">
@@ -118,7 +125,7 @@ function Home() {
                 <p className="skype">Oluwakayy</p>
 
                 <p className="footnotes">&copy; 2020 <a href="https://lollykrown.netlify.app"
-                  rel="noopener noreferrer"  target="_blank">Ol&#250;wak&#225;y&#242;d&#233;.</a> All rights reserved.</p>
+                    rel="noopener noreferrer" target="_blank">Ol&#250;wak&#225;y&#242;d&#233;.</a> All rights reserved.</p>
             </section>
 
 
@@ -129,9 +136,7 @@ function Home() {
 export default Home
 
 const HomeWrapper = styled.div`
-.fa {
-    color:white;
-}
+
 .top{
     height: 88vh;
     width: 100%;
@@ -175,15 +180,7 @@ const HomeWrapper = styled.div`
   .l{
       margin:0 auto;
   }
-  @media (max-width: 800px) {
-    .caption h2 {
-      font-size: 1.5rem;
-    }
-    .box{
-        width:220px;
-        height:120px;
-    }
-  }
+
   .btn {
     font-size: 16px;
     border-radius: 3px;
@@ -215,18 +212,12 @@ const HomeWrapper = styled.div`
 //     }
 //   }
 
-  .column {
-    float: left;
-    width: 50%;
-    padding: 20px;
+  .row {
+    display:grid;
+    grid-template-columns: 50% 50%;
+    justify-items:center;
+    padding-left:1.125rem;
   }
-  
-  .portfolio:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
 .img {
     width: 90%;
     height: 70%;
@@ -335,11 +326,18 @@ textarea {
 }
 
 @media only screen and (max-width: 767px) { 
+    .caption h2 {
+        font-size: 1.5rem;
+      }
+      .box{
+          width:220px;
+          height:120px;
+      }
     .top {
         height: 84vh;
       }
-      .column {
-          width: 100%;
+      .row {
+          display:table;
         }
     .email, .email-label, .skype,.skype-label {
         display: none;
