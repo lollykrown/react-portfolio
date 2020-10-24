@@ -2,13 +2,13 @@ import React from 'react';
 import styled from "styled-components";
 import logo from '../../src/logo.svg'
 
-const Navbar = ({gotoPortfolio, gotoContact}) => (
+const Navbar = () => (
   <NavWrapper>
       <ul className="menu">
-          <li className="nav-item logo" ><img src={logo} alt="logo"/></li>
-          <li className="nav-item mt-2" onClick={() => gotoPortfolio()}>Portfolio</li>
-          <li className="nav-item mt-2">About</li>
-          <li className="nav-item mt-2" onClick={() => gotoContact()}>Contact</li>
+          <li className="nav-item logo" ><a href="#home" ><img src={logo} alt="logo"/></a></li>
+          <li className="nav-item mt-2"><a href="#portfolio" >Portfolio</a></li>
+          <li className="nav-item mt-2"><a href="#about" >About</a></li>
+          <li className="nav-item mt-2"><a href="#contact" >Contact</a></li>
       </ul>
 
     </NavWrapper>

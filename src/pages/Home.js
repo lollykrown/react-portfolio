@@ -6,15 +6,6 @@ import down from '../../src/down.svg';
 
 function Home() {
     const portfolio = useRef(null)
-    const contact = useRef(null)
-
-    const gotoPortfolio =() => {
-        window.scrollTo(0, portfolio.current.offsetTop)
-    }
-    const gotoContact =() => {
-        console.log('kk',portfolio.current.offsetTop, contact.current.clientHeight)
-        window.scrollTo(contact.current.clientWidth, contact.current.clientHeight)
-    }
     const words = [
         `I'm Olu\u0301waka\u0301yo\u0300d\u00E9`,
         "A Software Developer ",
@@ -23,7 +14,7 @@ function Home() {
     ]
 
     useEffect(() => {
-        // window.scrollTo({ top: 0, behavior: 'smooth' })
+        window.scrollTo({ top: 0, behavior: 'smooth' })
 
 
         return () => {
@@ -76,7 +67,7 @@ function Home() {
 
     return (
         <HomeWrapper>
-            <Navbar gotoPortfolio={gotoPortfolio} gotoContact={gotoContact}/>
+            <Navbar/>
             <section className="top">
                 <div className="caption" >
                     <div className="box">
@@ -84,11 +75,11 @@ function Home() {
                         <h2 className="l"> 👋 </h2>
                     </div>
                 </div>
-                <img className="arrow" src={down} alt="down-arrow" onClick={() => gotoPortfolio()} />
+                <img className="arrow" src={down} alt="down-arrow" onClick={() => window.scrollTo(0, portfolio.current.offsetTop)} />
 
             </section>
 
-            <section ref={portfolio} className="portfolio">
+            <section ref={portfolio} className="portfolio" id="portfolio">
                 <h1 className="center">Portfolio</h1>
                 {siteDetails.map((site, index) => {
                     return (
@@ -105,7 +96,7 @@ function Home() {
                 
             </section>
 
-            <section ref={contact} className="footer">
+            <section className="footer">
                 <div className="form" id="contact">
                     <form name="contact" method="POST" data-netlify="true">
                         <p className="col">Please feel free to contact me for freelance project and collaboration</p>
@@ -117,12 +108,9 @@ function Home() {
                 </div>
                 <h1>Contact</h1>
                 <ul className="links">
-                    <li className="icon"><a href="https://github.com/lollykrown"><i className="fa fa-github"
-                        style={{fontSize:"1.25em",color:"#fff",marginLeft: "-1.8em"}}></i></a></li>
-                    <li className="icon"><a href="https://twitter.com/lollykrown"><i className="fa fa-twitter "
-                        style={{fontSize:"1.25em",color:"#fff"}}></i></a></li>
-                    <li className="icon"><a href="https://whatsapp.com/lollykrown"><i className="fa fa-whatsapp "
-                        style={{fontSize:"1.25em",color:"#fff"}}></i></a></li>
+                    <li className="icon"><a href="https://github.com/lollykrown"><i className="fa fa-github"></i></a></li>
+                    <li className="icon"><a href="https://twitter.com/lollykrown"><i className="fa fa-twitter "></i></a></li>
+                    <li className="icon"><a href="https://whatsapp.com/lollykrown"><i className="fa fa-whatsapp "></i></a></li>
                 </ul>
                 <h3 className="email-label">Email</h3>
                 <a className="email" href="mailto:lollykrown@gmail.com">lollykrown@gmail.com</a>
@@ -267,83 +255,82 @@ const HomeWrapper = styled.div`
     top:2rem;
     z-index: -1;
 }
-.bg, .footer {
+.bg, .footer, .btn-send {
     color:#fff;
-    //background-color: #000fff;
+    background-color: #000fff;
     box-shadow: inset 0 0 1000px 1000px rgba(0, 0, 0, 0.747);
 }
 .footer {
-    //background-color: #000;
+    background-color: #000;
     padding: 1em 6em;
     margin-top: 2em;
+}
+.links{
+    padding-inline-start: 0;
 }
 .links li{
     display: inline;
 }
-// .icon {
-//     margin-right: 1.5em;
-// }
-.icon a {
-    color: #6d6d6d;
+.icon {
+    margin-right: 1.4rem;
 }
-// .form {
-//     position: relative;
-//     bottom: 4.5em;
-// }
-// form {
-//     background-color: #000fff;
-//     color: #ffffff;
-//     padding: 3em;
-//     width: 25%;
-//     float: right;
-//     box-shadow: 5px 10px 15px 10px rgba(0,0,0,0.35)
-// }
-// input, textarea {
-//     width: 100%;
-//     border: none;
-//     border-bottom: 1px solid #ffffff;
-//     background-color: #000fff;
-//     color: #ffffff;
-// }
-// input {
-//     margin-top: 1.5em;
-//     margin-bottom: 0.5em;
-// }
-// input:focus {
-//     border: none;
-//     border-bottom: 1px solid #d1d1d1;
-//   }
-// ::placeholder {
-//     color: #d1d1d1;
-// }
-// .col {
-//     color: #d1d1d1
-// }
-// textarea {
-//     height: 4em;
-//     margin-bottom: 1.75em;
-// }
-// .btn-send {
-//     background-color: #ffffff;
-//     padding: .75em 4em;
-//     color: #000fff;
-//     font-weight: 600;
-//     text-transform: uppercase;
-//     display: block;
-//     width: max-content;
-// }
-// .footnotes {
-//     margin-top: 3em;
-//     text-align: center;
-//     color: rgba(0, 0, 0, 0.6)
-// }
-
-
-@media (max-width: 600px) {
-
+a {
+    color: #6d6d6d;
+    font-size:1.25rem;
+    text-decoration:none;
+    transition: 2s linear;
+}
+a:hover {
+    color: #fff;
+}
+.form {
+    position: relative;
+    bottom: 4.5rem;
+}
+form {
+    background-color: #fff;
+    color: #ffffff;
+    padding: 3em;
+    width: 30%;
+    float: right;
+    box-shadow: 5px 10px 15px 10px rgba(0,0,0,0.7);
+}
+.col{
+    color:#000;
+}
+input, textarea {
+    width: 100%;
+    border: none;
+    border: 1px solid #000;
+    background-color: rgba(0,0,0,0.075);
+    color: #000;
+}
+input {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+input:focus {
+    border: none;
+    border-bottom: 1px solid #d1d1d1;
   }
+::placeholder,::-webkit-input-placeholder, :-ms-input-placeholder {
+    color: #ffffff;
+}
 
-
+textarea {
+    height: 4rem;
+    margin-bottom: 1.75rem;
+}
+.btn-send {
+    padding: .75em 4em;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: block;
+    width: max-content;
+}
+.footnotes {
+    margin-top: 3em;
+}
 
 @media only screen and (max-width: 767px) { 
     .top {
@@ -352,34 +339,31 @@ const HomeWrapper = styled.div`
       .column {
           width: 100%;
         }
-    // .email, .email-label, .skype,.skype-label {
-    //     display: none;
-    // }
-    // form {
-    //     padding: 2em;
-    //     width: 100%;
-    //     padding: 10px;
-    // }
-    // footer{
-    //     padding: 1em 3em;
-    // }
-    // .right {
-    //     position: absolute;
-    //     right: 0
-    // }
-    // img[src="sq-fill.svg"]{
-    //     width: 3.125em;
-    //     height:3.125em
-    // }
-    // .fa, .fa-twitter, .fa-github, .fa-whatsapp {
-    //     font-size:1.25em !important;
-    // }
+    .email, .email-label, .skype,.skype-label {
+        display: none;
+    }
+    form {
+        padding: 2em;
+        width: 100%;
+        padding: 10px;
+    }
+    .fa:hover{
+        font-size:1.35rem;
+    }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) { 
-
+    form {
+        padding: 2em;
+        width: 50%;
+        padding: 10px;
+    }
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) { 
-
+    form {
+        padding: 2em;
+        width: 40%;
+        padding: 10px;
+    }
 }
 
 `;
