@@ -334,7 +334,7 @@ textarea {
           height:120px;
       }
     .top {
-        height: 86vh;
+        height: 84vh;
       }
       .row {
           display:table;
