@@ -36,7 +36,7 @@ ul {
   list-style-type: none;
   margin-block-start: 0;
   margin-block-end: 0;
-  padding: 1rem 3rem;
+  padding: 1rem 2rem;
 }
 
 .nav-item{
@@ -47,4 +47,12 @@ ul {
 .logo{
   margin-right:auto;
 }
+@media only screen and (max-width: 767px) { 
+  ul {
+    padding: 1rem 1.5rem;
+  }
+    .nav-item{
+      margin-right: .75rem;
+    
+  }
 `

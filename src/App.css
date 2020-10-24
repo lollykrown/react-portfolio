@@ -11,3 +11,6 @@ img{
 a{
   cursor: grab;
 }
+ul{
+  padding-inline-start: 0;
+}
