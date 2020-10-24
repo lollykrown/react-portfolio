@@ -1,13 +1,14 @@
 import React from 'react'
-import TypeWriter from '../components/Typewriter'
 import styled from "styled-components";
 import right from '../../src/right.svg';
+import Navbar from '../components/Navbar'
 
 function Portfolio() {
 
     return (
         <HomeWrapper className="container-fluid">
             <div className="custom-container">
+            <Navbar />
 
                 <main className="">
                     <aside>
@@ -21,7 +22,7 @@ function Portfolio() {
                     </aside>
                     <section className="name">
                         <div >
-                            <h1 className="ml-3"><TypeWriter className="" texts="Ol&#250;wak&#225;y&#242;d&#233;" /></h1>
+                            <h1 className="ml-3">portfolio</h1>
                         </div>
                     </section>
                     <section className="bottom-section">

@@ -1,11 +1,18 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import TypeWriter from '../components/Typewriter'
 import styled from "styled-components";
 import Navbar from '../components/Navbar'
 import right from '../../src/right.svg';
+import { Link } from 'react-router-dom'
 
 function Home() {
 
+    const slide = useRef(null)
+
+    const options={
+        behaviour:'smooth',
+
+    }
     return (
         <HomeWrapper className="container-fluid">
             <div className="custom-container">
@@ -32,9 +39,9 @@ function Home() {
                                 <h3>Ol&#250;wak&#225;y&#242;d&#233; Agboola</h3>
                                 <p className="title">Fullstack Developer/Mobile Developer</p>
                             </div>
-                            <div className="right">
+                            <Link to="/portfolio" className="right" ref={slide} onClick={() => slide.current.scrollIntoView(options)}>
                                 <p>Check me out &nbsp; <a href="https://oluwakayode.netlify.app"><img className="arrow" src={right} alt="" /></a></p>
-                            </div>
+                            </Link>
                         </div>
                     </section>
                 </main>
@@ -101,15 +108,15 @@ aside {
   .arrow {
     width: 40px;
     height: 40px;
+    transition: transform 3s ease;
+    // animation: PanelSlide 15s;
   }
   a{
       transition: background 1s linear;
   }
   a:hover {
-    background-color: rgba(255,255,255,0.3);
-    font-weight:400;
     text-decoration: none;
-    color: #fff;
+    color:#fff;
   }
   .name {
     text-align: center;
