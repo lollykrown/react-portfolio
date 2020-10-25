@@ -32,19 +32,20 @@ function Home() {
                         <h2 className="l"> 👋 </h2>
                     </div>
                 </div>
-                <img className="arrow" onClick={() => window.portfolio.current.scrollTo(0, 598)} width="80px" height="80px" src={down} alt="down-arrow"/>
+                <a className="arrow" href="#portfolio"> <img width="70px" height="70px" src={down} alt="down-arrow" /></a>
             </section>
-
-            <Suspense fallback={<Loader
-                className="cen"
-                type="BallTriangle"
-                color="#000"
-                height={100}
-                width={100}
-                timeout={5000} //5 secs
-            />}>
-                <Portfolio className="portfolio" id="portfolio" ref={portfolio} />
-            </Suspense>
+            <div className="portfolio" id="portfolio" ref={portfolio} >
+                <Suspense fallback={<Loader
+                    className="cen"
+                    type="BallTriangle"
+                    color="#000"
+                    height={100}
+                    width={100}
+                    timeout={5000} //5 secs
+                />}>
+                    <Portfolio />
+                </Suspense>
+            </div>
 
             <section className="footer">
                 <div className="form" id="contact">
