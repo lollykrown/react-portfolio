@@ -67,7 +67,7 @@ function Home() {
                 <h3 className="skype-label">Skype</h3>
                 <p className="skype">Oluwakayy</p>
 
-                <p className="footnotes">&copy; 2020 <a href="https://lollykrown.netlify.app"
+                <p className="footnotes">&copy; 2020 <a href="https://oluwakayode.netlify.app"
                     rel="noopener noreferrer" target="_blank">Ol&#250;wak&#225;y&#242;d&#233;.</a> All rights reserved.</p>
             </section>
 
