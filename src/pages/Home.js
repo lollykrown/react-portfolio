@@ -61,7 +61,7 @@ const HomeWrapper = styled.div`
 
     height: 92vh;
     width: 100%;
-    background: url('/img/bg.jpg');
+    background: url('/img/bg.webp');
     background-size: cover;
     background-repeat: no-repeat;
     box-shadow: inset 0 0 1000px 1000px rgba(0, 0, 0, 0.747);
