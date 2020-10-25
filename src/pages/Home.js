@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, lazy, Suspense } from 'react'
+import React, { useEffect, lazy, Suspense } from 'react'
 import TypeWriter from '../components/Typewriter'
 import styled from "styled-components";
 import Navbar from '../components/Navbar'
@@ -8,7 +8,6 @@ import Loader from 'react-loader-spinner'
 const Portfolio = lazy(() => import('../components/Portfolio'));
 
 function Home() {
-    const portfolio = useRef(null)
     const words = [
         `I'm Olu\u0301waka\u0301yo\u0300d\u00E9`,
         "A Software Developer ",
@@ -32,7 +31,7 @@ function Home() {
                         <h2 className="l"> 👋 </h2>
                     </div>
                 </div>
-                <img className="arrow" width="80px" height="80px" src={down} alt="down-arrow" onClick={() => window.scrollTo(0, portfolio.current.offsetTop)} />
+                <a className="arrow" href="#portfolio"><img width="80px" height="80px" src={down} alt="down-arrow"/></a>
             </section>
 
             <Suspense fallback={<Loader
@@ -43,7 +42,7 @@ function Home() {
                 width={100}
                 timeout={5000} //5 secs
             />}>
-                <Portfolio ref={portfolio} className="portfolio" id="portfolio" />
+                <Portfolio className="portfolio" id="portfolio" />
             </Suspense>
 
             <section className="footer">
