@@ -33,7 +33,7 @@ function Home() {
                 </div>
                 <a className="arrow" href="#portfolio"> <img width="70px" height="70px" src={down} alt="down-arrow" /></a>
             </section>
-            <div className="portfolio" id="portfolio" ref={portfolio} >
+            <div className="portfolio" id="portfolio" >
                 <Suspense fallback={<Loader
                     className="cen"
                     type="BallTriangle"
