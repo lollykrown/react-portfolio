@@ -49,7 +49,6 @@ export default function Portfolio() {
         }
     ]
 
-
     return (
         <section >
             <h1 className="center">Portfolio</h1>

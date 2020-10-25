@@ -38,14 +38,13 @@ function Home() {
                 <img className="arrow" width="80px" height="80px" src={down} alt="down-arrow" onClick={() => window.scrollTo(0, portfolio.current.offsetTop)} />
             </section>
 
-
             <Suspense fallback={<Loader
                 className="cen"
                 type="BallTriangle"
                 color="#000"
                 height={100}
                 width={100}
-                timeout={10000} //3 secs
+                timeout={5000} //5 secs
             />}>
                 <Portfolio ref={portfolio} className="portfolio" id="portfolio" />
             </Suspense>
@@ -90,7 +89,7 @@ const HomeWrapper = styled.div`
 .top{
     height: 88vh;
     width: 100%;
-    background: url('/img/bg.jpg');
+    background: url('/img/bg.webp');
     background-size: cover;
     background-repeat: no-repeat;
     box-shadow: inset 0 0 1000px 1000px rgba(0, 0, 0, 0.747);
