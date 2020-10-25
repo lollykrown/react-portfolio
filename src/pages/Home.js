@@ -70,8 +70,6 @@ function Home() {
                 <p className="footnotes">&copy; 2020 <a href="https://oluwakayode.netlify.app"
                     rel="noopener noreferrer" target="_blank">Ol&#250;wak&#225;y&#242;d&#233;.</a> All rights reserved.</p>
             </section>
-
-
         </HomeWrapper >
     )
 }
