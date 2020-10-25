@@ -1,4 +1,4 @@
-import React, { useEffect, lazy, Suspense, useRef } from 'react'
+import React, { useEffect, lazy, Suspense } from 'react'
 import TypeWriter from '../components/Typewriter'
 import styled from "styled-components";
 import Navbar from '../components/Navbar'
@@ -14,7 +14,6 @@ function Home() {
         "A Designer ",
         "Open source Contributor"
     ]
-    const portfolio = useRef(null)
 
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' })
