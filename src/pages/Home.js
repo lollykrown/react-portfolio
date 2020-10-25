@@ -1,8 +1,11 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, lazy, Suspense } from 'react'
 import TypeWriter from '../components/Typewriter'
 import styled from "styled-components";
 import Navbar from '../components/Navbar'
 import down from '../../src/down.svg';
+import Loader from 'react-loader-spinner'
+
+const Portfolio = lazy(() => import('../components/Portfolio'));
 
 function Home() {
     const portfolio = useRef(null)
@@ -22,54 +25,6 @@ function Home() {
         }
     }, [])
 
-    const siteDetails = [
-        {
-            name: 'Ecommerce',
-            website: 'https://kay-react-ecommerce.netlify.app',
-            imgUrl: 'https://res.cloudinary.com/lollykrown/image/upload/v1599647132/Portfolios/ecommerce.png'
-        },
-        {
-            name: 'Triangle',
-            website: 'https://oluwakayode.netlify.app',
-            imgUrl: 'https://res.cloudinary.com/lollykrown/image/upload/v1598612374/Portfolios/triangle2.png'
-        },
-        {
-            name: 'Black Portfolio',
-            website: 'https://github.com/lollykrown/Templates/tree/master/Portfolio%20Templates',
-            imgUrl: 'https://res.cloudinary.com/lollykrown/image/upload/v1597944493/Portfolios/portfolio-black1.png'
-        },
-        {
-            name: 'Blue Portfolio',
-            website: 'https://lollykrown.xyz',
-            imgUrl: 'https://res.cloudinary.com/lollykrown/image/upload/v1597944476/Portfolios/blue.png'
-        },
-        {
-            name: 'Tourist App',
-            website: 'https://naija-tourist.herokuapp.com',
-            imgUrl: 'https://res.cloudinary.com/lollykrown/image/upload/v1600288517/Portfolios/tourism.png'
-        },
-        {
-            name: 'Position',
-            website: 'https://github.com/lollykrown/Templates/tree/master/Portfolio%20Templates',
-            imgUrl: 'https://res.cloudinary.com/lollykrown/image/upload/v1597946060/Portfolios/position.png'
-        },
-        {
-            name: 'Triangle 2',
-            website: 'https://github.com/lollykrown/Templates/tree/master/Portfolio%20Templates',
-            imgUrl: 'https://res.cloudinary.com/lollykrown/image/upload/v1598375046/Portfolios/tri.png'
-        },
-        {
-            name: 'Black Portfolio 2',
-            website: 'https://github.com/lollykrown/Templates/tree/master/Portfolio%20Templates',
-            imgUrl: 'https://res.cloudinary.com/lollykrown/image/upload/v1597944500/Portfolios/portfolio-black2.png'
-        },
-        {
-            name: 'Mini Netlify',
-            website: 'https://min-netflix.netlify.app',
-            imgUrl: 'https://res.cloudinary.com/lollykrown/image/upload/v1603489570/Portfolios/min-netflix.png'
-        }
-    ]
-
     return (
         <HomeWrapper>
             <Navbar />
@@ -80,28 +35,20 @@ function Home() {
                         <h2 className="l"> 👋 </h2>
                     </div>
                 </div>
-                <img className="arrow" src={down} alt="down-arrow" onClick={() => window.scrollTo(0, portfolio.current.offsetTop)} />
-
+                <img className="arrow" width="80px" height="80px" src={down} alt="down-arrow" onClick={() => window.scrollTo(0, portfolio.current.offsetTop)} />
             </section>
 
-            <section ref={portfolio} className="portfolio" id="portfolio">
-                <h1 className="center">Portfolio</h1>
-                <div className="row">
-                    {siteDetails.map((site, index) => {
-                        return (
-                            <a className="column" key={index} href={site.website}>
-                                <div className="portfolio-container ">
-                                    <div className="bg"></div>
-                                    <img className="img" width="500" height="300"
-                                        src={site.imgUrl} alt={site.name} />
-                                    <h3 className="portfolio-title">{site.name}</h3>
-                                </div>
-                            </a>
-                        )
-                    })
-                    }
-                </div>
-            </section>
+
+            <Suspense fallback={<Loader
+                className="cen"
+                type="BallTriangle"
+                color="#000"
+                height={100}
+                width={100}
+                timeout={10000} //3 secs
+            />}>
+                <Portfolio ref={portfolio} className="portfolio" id="portfolio" />
+            </Suspense>
 
             <section className="footer">
                 <div className="form" id="contact">
@@ -136,7 +83,10 @@ function Home() {
 export default Home
 
 const HomeWrapper = styled.div`
-
+.cen{
+    margin: 36%;
+    padding:5rem;
+}
 .top{
     height: 88vh;
     width: 100%;
@@ -186,8 +136,6 @@ const HomeWrapper = styled.div`
     border-radius: 3px;
   }
   .arrow{
-      width:80px;
-      height:80px;
       margin:0 auto 1.75rem auto;
       padding: 1rem;
   }
