@@ -48,7 +48,7 @@ function Home() {
 
             <section className="footer">
                 <div className="form" id="contact">
-                    <form name="reach" method="POST" data-netlify="true">
+                    <form name="reach"  method="POST" data-netlify="true">
                         <p className="col">Please feel free to contact me for freelance projects and collaborations</p>
                         <input type="text" id="name" name="name" placeholder="Name" required />
                         <input type="email" id="email" name="email" placeholder="Email" required />
