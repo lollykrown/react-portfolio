@@ -1,4 +1,4 @@
-import React, { useEffect, lazy, Suspense } from 'react'
+import React, { useEffect, lazy, Suspense, useRef } from 'react'
 import TypeWriter from '../components/Typewriter'
 import styled from "styled-components";
 import Navbar from '../components/Navbar'
@@ -14,6 +14,7 @@ function Home() {
         "A Designer ",
         "Open source Contributor"
     ]
+    const portfolio = useRef(null)
 
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -31,7 +32,7 @@ function Home() {
                         <h2 className="l"> 👋 </h2>
                     </div>
                 </div>
-                <a className="arrow" href="#portfolio"><img width="80px" height="80px" src={down} alt="down-arrow"/></a>
+                <img className="arrow" onClick={() => window.portfolio.current.scrollTo(0, 598)} width="80px" height="80px" src={down} alt="down-arrow"/>
             </section>
 
             <Suspense fallback={<Loader
@@ -42,7 +43,7 @@ function Home() {
                 width={100}
                 timeout={5000} //5 secs
             />}>
-                <Portfolio className="portfolio" id="portfolio" />
+                <Portfolio className="portfolio" id="portfolio" ref={portfolio} />
             </Suspense>
 
             <section className="footer">

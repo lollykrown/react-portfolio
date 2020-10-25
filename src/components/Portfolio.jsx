@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 
 export default function Portfolio() {
     const siteDetails = [
@@ -48,9 +48,10 @@ export default function Portfolio() {
             imgUrl: 'https://res.cloudinary.com/lollykrown/image/upload/v1603489570/Portfolios/min-netflix.png'
         }
     ]
+    const portfolio = useRef(null)
 
     return (
-        <section >
+        <section ref={portfolio}>
             <h1 className="center">Portfolio</h1>
             <div className="row">
                 {siteDetails.map((site, index) => {

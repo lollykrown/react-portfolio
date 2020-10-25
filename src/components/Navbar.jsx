@@ -5,7 +5,7 @@ import logo from '../../src/logo.svg'
 const Navbar = () => (
   <NavWrapper>
       <ul className="menu">
-          <li className="nav-item logo" ><a href="#home" ><img src={logo} alt="logo"/></a></li>
+          <li className="nav-item logo" ><a href="/" ><img src={logo} alt="logo"/></a></li>
           <li className="nav-item mt-2"><a href="#portfolio" >Portfolio</a></li>
           <li className="nav-item mt-2"><a href="#about" >About</a></li>
           <li className="nav-item mt-2"><a href="#contact" >Contact</a></li>
