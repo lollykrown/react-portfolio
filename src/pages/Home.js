@@ -9,7 +9,7 @@ const Portfolio = lazy(() => import('../components/Portfolio'));
 
 function Home() {
     const words = [
-        "Hi!",
+        "Hi",
         `I'm Olu\u0301waka\u0301yo\u0300d\u00E9`,
         "A Software Developer ",
         "A Designer ",
